@@ -1,0 +1,15 @@
+.table thead th {
+	border-bottom: 1px solid #000;
+}
+
+table > tbody > tr.new-row > td {
+	border-top: 1px solid #000;
+}
+
+table > tbody > tr.items-row > td {
+	border-top: 1px solid #111;
+}
+
+table > tbody > tr.system-row > td {
+	color: #666;
+}
