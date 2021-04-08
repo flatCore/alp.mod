@@ -19,6 +19,10 @@ if(isset($_REQUEST['alp_filter'])) {
 	$_SESSION['alp_filter'] = clean_varname($_REQUEST['alp_filter']);
 }
 
+if(isset($_REQUEST['reset_alp_filter'])) {
+	$_SESSION['alp_filter'] = '';
+}
+
 if($_SESSION['alp_filter'] == '') {
 	$alp_filter = '';
 } else {
@@ -310,9 +314,12 @@ echo '</div>';
 echo '</div>';
 echo '<div class="col-md-8">';
 
-echo '<form class="form-inline float-right" action="?tn=moduls&sub=alp.mod&a=start" method="POST">';
+echo '<form class="form-inline float-end" action="?tn=moduls&sub=alp.mod&a=start" method="POST">';
+echo '<div class="input-group">';
 echo '<input type="text" class="form-control" name="alp_filter" value="'.$alp_filter.'"> ';
-echo '<input type="submit" name="set_alp_filter" value="Filter" class="btn btn-fc">';
+echo '<input type="submit" name="set_alp_filter" value="Filter" class="btn btn-fc text-success">';
+echo '<input type="submit" name="reset_alp_filter" value="Reset" class="btn btn-fc">';
+echo '</div>';
 echo '<input type="hidden" name="csrf_token" value="'.$_SESSION['token'].'">';
 echo '</form>';
 echo '</div>';
